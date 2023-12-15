@@ -1,0 +1,3 @@
+# required python modules to run task.py
+invoke
+lxml

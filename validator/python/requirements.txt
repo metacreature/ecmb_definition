@@ -3,3 +3,4 @@ invoke
 pyyaml
 lxml
 pillow
+path

@@ -1,10 +1,11 @@
-import re, os, yaml, io, zipfile
+import re, os, yaml, io, zipfile, path
 from typing import Callable
 from lxml import etree
 from PIL import ImageFile
 
 class ecmbValidator():
 
+    _validator_path = None
     _schema_location = None
     _error_callback = None
     _is_valid = None
@@ -18,6 +19,7 @@ class ecmbValidator():
 
     def __init__(self, error_callback: Callable = None):
 
+        self._validator_path = path.Path(__file__).abspath().parent + '/'
         self.error_callback = error_callback
         self._load_config()
         
@@ -202,7 +204,7 @@ class ecmbValidator():
 
     def _load_config(self) -> None:
         try: 
-            with open('ecmb_validator_config.yml', 'r') as file:
+            with open(self._validator_path + 'ecmb_validator_config.yml', 'r') as file:
                 config = yaml.safe_load(file)
             
             schema_location = config['schema_location']
@@ -210,12 +212,15 @@ class ecmbValidator():
                 raise Exception()
         except:
             raise Exception('Config not found or invalid!')
+                
+        if not re.search(r'[\/\\]$', schema_location):
+            schema_location += '/'
+
+        if not re.search(r'[:]', schema_location):
+            schema_location = self._validator_path + schema_location
         
         if not os.path.isdir(schema_location):
             raise Exception('Schema-Location not found or not a directory!')
-        
-        if not re.search(r'[\/\\]$', schema_location):
-            schema_location += '/'
         
         self._schema_location = schema_location
     

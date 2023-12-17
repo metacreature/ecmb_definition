@@ -119,10 +119,10 @@
 							<xs:attribute name="type" use="required">
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
-										<xs:enumeration value="author"/>
-										<xs:enumeration value="coauthor"/>
-										<xs:enumeration value="story"/>
-										<xs:enumeration value="illustration"/>
+										<xs:enumeration value="Author"/>
+										<xs:enumeration value="Co-Author"/>
+										<xs:enumeration value="Story"/>
+										<xs:enumeration value="Illustrations"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:attribute>
@@ -148,13 +148,13 @@
 	
 	<xs:simpleType name="basedontype">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="novel"/>
-			<xs:enumeration value="lightnovel"/>
-			<xs:enumeration value="manga"/>
-			<xs:enumeration value="comic"/>
-			<xs:enumeration value="anime"/>
-			<xs:enumeration value="game"/>
-			<xs:enumeration value="other"/>
+			<xs:enumeration value="Novel"/>
+			<xs:enumeration value="Lightnovel"/>
+			<xs:enumeration value="Manga"/>
+			<xs:enumeration value="Comic"/>
+			<xs:enumeration value="Anime"/>
+			<xs:enumeration value="Game"/>
+			<xs:enumeration value="Other"/>
 		</xs:restriction>
 	</xs:simpleType>
 

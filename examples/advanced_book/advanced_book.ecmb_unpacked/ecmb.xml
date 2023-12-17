@@ -1,0 +1,58 @@
+<book version="1.0" type="manga" language="en" uid="bestmangapublisherinc_98a2cd52fea1168d" width="900" height="1200">
+  <metadata>
+    <isbn>0123456789</isbn>
+    <publisher href="https://www.bestmangapublisher-inc.com">BestMangaPublisher Inc.</publisher>
+    <publishdate>2023-01-18</publishdate>
+    <title>The Big Trip</title>
+    <volume>1</volume>
+    <description>A stick figure goes on a big thrilling hiking-trip.</description>
+    <authors>
+      <author type="Story" href="https://github.com/metacreature">Clemens K.</author>
+      <author type="Illustrations" href="https://github.com/metacreature">Clemens K.</author>
+    </authors>
+    <genres>
+      <genre>Adventure</genre>
+      <genre>Summer</genre>
+    </genres>
+    <warnings>
+      <warning>Sexual Content</warning>
+    </warnings>
+    <basedon>
+      <type>Lightnovel</type>
+      <isbn>9876543210</isbn>
+      <publisher href="https://www.bestnovelpublisher-inc.com">BestNovelPublisher Inc.</publisher>
+      <publishdate>1986</publishdate>
+      <title>The Scary Hiking</title>
+      <authors>
+        <author type="Author" href="https://www.agatha-christie.net">Agatha Christie</author>
+      </authors>
+    </basedon>
+  </metadata>
+  <content cover_front="cover_front.jpg" cover_rear="cover_rear.jpg">
+    <dir name="1">
+      <img src="2.jpg"/>
+    </dir>
+    <dir name="3">
+      <img src="4.jpg"/>
+      <img src="5.jpg"/>
+      <img src="6.jpg"/>
+      <img src="7.jpg"/>
+      <dimg src="8.jpg" src_left="8_l.jpg" src_right="8_r.jpg"/>
+      <dir name="9">
+        <img src="a.jpg"/>
+        <img src="b.jpg"/>
+      </dir>
+    </dir>
+  </content>
+  <navigation>
+    <headline label="Highlights">
+      <item label="The Girl" href="/content/3/6.jpg"/>
+      <item label="The Summit" href="/content/3/8.jpg#left"/>
+    </headline>
+    <chapter label="Chapter 1" title="The Bus-Trip" dir="/content/1" href="/2.jpg"/>
+    <chapter label="Chapter 2" title="The Hiking-Trip" dir="/content/3" href="/4.jpg">
+      <item label="The Summit" href="/8.jpg#left"/>
+      <chapter label="Chapter 2.1" title="Downhill" dir="/9" href="/a.jpg"/>
+    </chapter>
+  </navigation>
+</book>

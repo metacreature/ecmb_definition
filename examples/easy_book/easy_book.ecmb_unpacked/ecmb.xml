@@ -1,0 +1,36 @@
+<book version="1.0" type="manga" language="en" uid="bestmangapublisherinc_98a2cd52fea1168d" width="900" height="1200">
+  <metadata>
+    <title>The Big Trip</title>
+    <volume>1</volume>
+    <description>A stick figure goes on a big thrilling hiking-trip.</description>
+    <authors>
+      <author type="Author">Clemens K.</author>
+    </authors>
+    <genres>
+      <genre>Adventure</genre>
+      <genre>Summer</genre>
+    </genres>
+    <warnings>
+      <warning>Sexual Content</warning>
+    </warnings>
+  </metadata>
+  <content cover_front="cover_front.jpg" cover_rear="cover_rear.jpg">
+    <dir name="1">
+      <img src="2.jpg"/>
+      <img src="3.jpg"/>
+    </dir>
+    <dir name="4">
+      <img src="5.jpg"/>
+      <img src="6.jpg"/>
+      <img src="7.jpg"/>
+      <img src="8.jpg"/>
+      <dimg src="9.jpg" src_left="9_l.jpg" src_right="9_r.jpg"/>
+      <img src="a.jpg"/>
+      <img src="b.jpg"/>
+    </dir>
+  </content>
+  <navigation>
+    <chapter label="Chapter 1" title="The Bus-Trip" dir="/content/1" href="/2.jpg"/>
+    <chapter label="Chapter 2" title="The Hiking-Trip" dir="/content/4" href="/5.jpg"/>
+  </navigation>
+</book>

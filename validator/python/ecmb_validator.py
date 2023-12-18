@@ -173,6 +173,12 @@ class ecmbValidator():
 
     def _load_xml(self, xml_content: str) -> etree.Element:
         try:
+            tmp = xml_content.decode(encoding='utf-8').encode(encoding='utf-8')
+        except:
+            self._write_error('XML contains invalid UTF-8 characters')
+            return
+        
+        try:
             fp = io.BytesIO(xml_content)
             fp.seek(0)
             xml_doc = etree.parse(fp)

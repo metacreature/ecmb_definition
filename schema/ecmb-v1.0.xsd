@@ -72,6 +72,128 @@
 	</xs:complexType>
 
 
+	<xs:complexType name="authors">
+		<xs:sequence>
+			<xs:element name="author" type="author" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="genres">
+		<xs:sequence>
+			<xs:element name="genre" type="notemptystring" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="warnings">
+		<xs:sequence>
+			<xs:element name="warning" type="warning" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="basedon">
+		<xs:all>
+			<xs:element name="type" type="basedontype" minOccurs="0" maxOccurs="1" />
+			<xs:element name="isbn" type="isbn" minOccurs="0" maxOccurs="1" />
+			<xs:element name="publisher" type="publisher" minOccurs="0" maxOccurs="1" />
+			<xs:element name="publishdate" type="publishdate" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="title" type="notemptystring" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="authors" type="authors" minOccurs="0" maxOccurs="1"/>
+		</xs:all>
+	</xs:complexType>
+
+
+	<xs:complexType name="content">
+		<xs:sequence>
+			<xs:choice minOccurs="1" maxOccurs="unbounded">
+				<xs:element name="img" type="img" />
+				<xs:element name="dimg" type="dimg" />
+				<xs:element name="dir" type="dir" />
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="cover_front" type="img_src" />
+		<xs:attribute name="cover_rear" type="img_src" />
+	</xs:complexType>
+
+
+	<xs:complexType name ="img">
+		<xs:attribute name="src" type="img_src" use="required" />
+	</xs:complexType>
+	
+
+	<xs:complexType name ="dimg">
+		<xs:attribute name="src" type="img_src" use="required" />
+		<xs:attribute name="src_left" type="img_src" use="required" />
+		<xs:attribute name="src_right" type="img_src" use="required" />
+	</xs:complexType>
+
+
+	<xs:complexType name="dir">
+		<xs:sequence>
+			<xs:choice minOccurs="1" maxOccurs="unbounded">
+				<xs:element name="img" type="img" />
+				<xs:element name="dimg" type="dimg" />
+				<xs:element name="dir" type="dir" />
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="name"  use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="[a-z0-9_-]+" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+
+
+	<xs:complexType name="navigation">
+		<xs:sequence>
+			<xs:choice minOccurs="1" maxOccurs="unbounded">
+				<xs:element name="item" type="item" />
+				<xs:element name="chapter" type="chapter" />
+				<xs:element name="headline" type="headline" />
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:complexType name ="item">
+		<xs:attribute name="label" type="notemptystring" use="required" />
+		<xs:attribute name="title" type="notemptystring" />
+		<xs:attribute name="href" type="navigation_href" use="required" />
+	</xs:complexType>
+
+
+	<xs:complexType name="chapter">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="item" type="item" />
+				<xs:element name="chapter" type="chapter" />
+				<xs:element name="headline" type="headline" />
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="label" type="notemptystring" use="required" />
+		<xs:attribute name="title" type="notemptystring" />
+		<xs:attribute name="dir" type="navigation_dir" use="required" />
+		<xs:attribute name="href" type="navigation_href" use="required" />
+	</xs:complexType>
+	
+	
+	<xs:complexType name="headline">
+		<xs:sequence>
+			<xs:choice minOccurs="1" maxOccurs="unbounded">
+				<xs:element name="item" type="item" />
+				<xs:element name="chapter" type="chapter" />
+				<xs:element name="headline" type="headline" />
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="label" type="notemptystring" use="required" />
+		<xs:attribute name="title" type="notemptystring" />
+	</xs:complexType>
+
+	
 	<xs:simpleType name="notemptystring">
 		<xs:restriction base="xs:string">
 			<xs:minLength value="1" />
@@ -107,44 +229,48 @@
 			<xs:minInclusive value="1" />
 		</xs:restriction>
 	</xs:simpleType>
-
-
-	<xs:complexType name="authors">
-		<xs:sequence>
-			<xs:element name="author" minOccurs="1" maxOccurs="unbounded">
-				<xs:complexType>
-					<xs:simpleContent> 
-						<xs:extension base="notemptystring">
-							<xs:attribute name="href" type="notemptystring"/>
-							<xs:attribute name="type" use="required">
-								<xs:simpleType>
-									<xs:restriction base="xs:string">
-										<xs:enumeration value="Author"/>
-										<xs:enumeration value="Co-Author"/>
-										<xs:enumeration value="Story"/>
-										<xs:enumeration value="Illustrations"/>
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:attribute>
-						</xs:extension>
-					</xs:simpleContent>
-				</xs:complexType>
-			</xs:element>
-		</xs:sequence>
+	
+	
+	<xs:complexType name="author">
+		<xs:simpleContent> 
+			<xs:extension base="notemptystring">
+				<xs:attribute name="href" type="notemptystring"/>
+				<xs:attribute name="type" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="Author"/>
+							<xs:enumeration value="Co-Author"/>
+							<xs:enumeration value="Story"/>
+							<xs:enumeration value="Illustrations"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
 	</xs:complexType>
-
-
-	<xs:complexType name="basedon">
-		<xs:all>
-			<xs:element name="type" type="basedontype" minOccurs="0" maxOccurs="1" />
-			<xs:element name="isbn" type="isbn" minOccurs="0" maxOccurs="1" />
-			<xs:element name="publisher" type="publisher" minOccurs="0" maxOccurs="1" />
-			<xs:element name="publishdate" type="publishdate" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="title" type="notemptystring" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="authors" type="authors" minOccurs="0" maxOccurs="1"/>
-		</xs:all>
-	</xs:complexType>
-
+	
+	<xs:simpleType name="warning">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Mature Themes"/>
+			<xs:enumeration value="Nudity"/>
+			<xs:enumeration value="Sexual Content"/>
+			<xs:enumeration value="Explict Sex"/>
+			<xs:enumeration value="Hentai"/>
+			<xs:enumeration value="Prostitution"/>
+			<xs:enumeration value="Incest"/>
+			<xs:enumeration value="Violence"/>
+			<xs:enumeration value="Explicit Violence"/>
+			<xs:enumeration value="Terrorism"/>
+			<xs:enumeration value="Emotional Abuse"/>
+			<xs:enumeration value="Sexual Abuse"/>
+			<xs:enumeration value="Physical Abuse"/>
+			<xs:enumeration value="Domestic Abuse" />
+			<xs:enumeration value="Self-Harm"/>
+			<xs:enumeration value="Suicide"/>
+			<xs:enumeration value="Drugs"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
 	
 	<xs:simpleType name="basedontype">
 		<xs:restriction base="xs:string">
@@ -157,142 +283,21 @@
 			<xs:enumeration value="Other"/>
 		</xs:restriction>
 	</xs:simpleType>
-
-
-	<xs:complexType name="genres">
-		<xs:sequence>
-			<xs:element name="genre" type="notemptystring" minOccurs="1" maxOccurs="unbounded" />
-		</xs:sequence>
-	</xs:complexType>
-
-
-	<xs:complexType name="warnings">
-		<xs:sequence>
-			<xs:element name="warning" minOccurs="1" maxOccurs="unbounded">
-				<xs:simpleType>
-					<xs:restriction base="xs:string">
-						<xs:enumeration value="Mature Themes"/>
-						<xs:enumeration value="Nudity"/>
-						<xs:enumeration value="Sexual Content"/>
-						<xs:enumeration value="Explict Sex"/>
-						<xs:enumeration value="Hentai"/>
-						<xs:enumeration value="Prostitution"/>
-						<xs:enumeration value="Incest"/>
-						<xs:enumeration value="Violence"/>
-						<xs:enumeration value="Explicit Violence"/>
-						<xs:enumeration value="Terrorism"/>
-						<xs:enumeration value="Emotional Abuse"/>
-						<xs:enumeration value="Sexual Abuse"/>
-						<xs:enumeration value="Physical Abuse"/>
-						<xs:enumeration value="Domestic Abuse" />
-						<xs:enumeration value="Self-Harm"/>
-						<xs:enumeration value="Suicide"/>
-						<xs:enumeration value="Drugs"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-
-
-	<xs:complexType name="content">
-		<xs:sequence>
-			<xs:choice minOccurs="1" maxOccurs="unbounded">
-				<xs:element name="img" type="img" />
-				<xs:element name="dimg" type="dimg" />
-				<xs:element name="dir" type="dir" />
-			</xs:choice>
-		</xs:sequence>
-		<xs:attribute name="cover_front" type="img_src" />
-		<xs:attribute name="cover_rear" type="img_src" />
-	</xs:complexType>
-
-
-	<xs:complexType name ="img">
-		<xs:attribute name="src" type="img_src" use="required" />
-	</xs:complexType>
 	
-
-	<xs:complexType name ="dimg">
-		<xs:attribute name="src" type="img_src" use="required" />
-		<xs:attribute name="src_left" type="img_src" use="required" />
-		<xs:attribute name="src_right" type="img_src" use="required" />
-	</xs:complexType>
-
-
+	
 	<xs:simpleType name="img_src">
 		<xs:restriction base="xs:string">
 			<xs:pattern value="[a-z0-9_-]+\.(jpg|jpeg|png|webp)" />
 		</xs:restriction>
 	</xs:simpleType>
-
-
-	<xs:complexType name="dir">
-		<xs:sequence>
-			<xs:choice minOccurs="1" maxOccurs="unbounded">
-				<xs:element name="img" type="img" />
-				<xs:element name="dimg" type="dimg" />
-				<xs:element name="dir" type="dir" />
-			</xs:choice>
-		</xs:sequence>
-		<xs:attribute name="name"  use="required">
-			<xs:simpleType>
-				<xs:restriction base="xs:string">
-					<xs:pattern value="[a-z0-9_-]+" />
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
-	</xs:complexType>
-
-
-	<xs:complexType name="navigation">
-		<xs:sequence>
-			<xs:choice minOccurs="1" maxOccurs="unbounded">
-				<xs:element name="item" type="item" />
-				<xs:element name="chapter" type="chapter" />
-				<xs:element name="headline" type="headline" />
-			</xs:choice>
-		</xs:sequence>
-	</xs:complexType>
 	
-	<xs:complexType name ="item">
-		<xs:attribute name="label" type="notemptystring" use="required" />
-		<xs:attribute name="title" type="notemptystring" />
-		<xs:attribute name="href" type="navigation_href" use="required" />
-	</xs:complexType>
-
-	<xs:complexType name="chapter">
-		<xs:sequence>
-			<xs:choice minOccurs="0" maxOccurs="unbounded">
-				<xs:element name="item" type="item" />
-				<xs:element name="chapter" type="chapter" />
-				<xs:element name="headline" type="headline" />
-			</xs:choice>
-		</xs:sequence>
-		<xs:attribute name="label" type="notemptystring" use="required" />
-		<xs:attribute name="title" type="notemptystring" />
-		<xs:attribute name="dir" type="navigation_dir" use="required" />
-		<xs:attribute name="href" type="navigation_href" use="required" />
-	</xs:complexType>
 	
-	<xs:complexType name="headline">
-		<xs:sequence>
-			<xs:choice minOccurs="1" maxOccurs="unbounded">
-				<xs:element name="item" type="item" />
-				<xs:element name="chapter" type="chapter" />
-				<xs:element name="headline" type="headline" />
-			</xs:choice>
-		</xs:sequence>
-		<xs:attribute name="label" type="notemptystring" use="required" />
-		<xs:attribute name="title" type="notemptystring" />
-	</xs:complexType>
-
-
 	<xs:simpleType name="navigation_dir">
 		<xs:restriction base="xs:string">
 			<xs:pattern value="(/[a-z0-9_-]+)+" />
 		</xs:restriction>
 	</xs:simpleType>
+	
 	
 	<xs:simpleType name="navigation_href">
 		<xs:restriction base="xs:string">

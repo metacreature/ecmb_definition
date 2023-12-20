@@ -211,7 +211,7 @@
 	<xs:complexType name="publisher">
 		<xs:simpleContent> 
 			<xs:extension base="notemptystring">
-				<xs:attribute name="href" type="notemptystring" />
+				<xs:attribute name="href" type="web_href" />
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -234,7 +234,7 @@
 	<xs:complexType name="author">
 		<xs:simpleContent> 
 			<xs:extension base="notemptystring">
-				<xs:attribute name="href" type="notemptystring"/>
+				<xs:attribute name="href" type="web_href"/>
 				<xs:attribute name="type" use="required">
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
@@ -249,6 +249,7 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	
+
 	<xs:simpleType name="warning">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Mature Themes"/>
@@ -281,6 +282,13 @@
 			<xs:enumeration value="Anime"/>
 			<xs:enumeration value="Game"/>
 			<xs:enumeration value="Other"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:simpleType name="web_href">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="(http|https)://.+" />
 		</xs:restriction>
 	</xs:simpleType>
 	

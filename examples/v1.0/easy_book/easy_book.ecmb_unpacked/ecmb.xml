@@ -1,4 +1,5 @@
-<book version="1.0" type="manga" language="en" uid="bestmangapublisherinc_98a2cd52fea1168d" width="900" height="1200">
+<?xml version='1.0' encoding='utf-8'?>
+<ecmb version="1.0" type="manga" language="en" uid="bestmangapublisherinc_98a2cd52fea1168d">
   <metadata>
     <title>The Big Trip</title>
     <volume>1</volume>
@@ -33,4 +34,4 @@
     <chapter label="Chapter 1" title="The Bus-Trip" dir="/content/1" href="/2.jpg"/>
     <chapter label="Chapter 2" title="The Hiking-Trip" dir="/content/4" href="/5.jpg"/>
   </navigation>
-</book>
+</ecmb>

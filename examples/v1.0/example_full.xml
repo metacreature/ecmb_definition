@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<book version="1.0" type="manga" language="en" width="300" height="400" uid="arghihahoihth6585868856865865horhju">
+<?xml version='1.0' encoding='utf-8' ?>
+<ecmb version="1.0" type="manga" language="en" uid="arghihahoihth6585868856865865horhju">
 	<metadata>
 		<isbn>0123456789</isbn>
 		<publisher href="https://www.mangapublisher-inc.com">MangaPublisher Inc.</publisher>
@@ -84,4 +84,4 @@
 			</chapter>
 		</chapter>
 	</navigation>
-</book>
+</ecmb>

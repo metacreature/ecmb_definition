@@ -2,7 +2,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">	
 
 
-	<xs:element name="book">
+	<xs:element name="ecmb">
 		<xs:complexType>
 			<xs:all>
 				<xs:element name="metadata" type="metadata" minOccurs="1" maxOccurs="1"/>
@@ -28,20 +28,6 @@
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
 						<xs:pattern value="[a-z]{2}" />
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:attribute>
-			<xs:attribute name="width" use="required">
-				<xs:simpleType>
-					<xs:restriction base="xs:integer">
-						<xs:minInclusive value="100" />
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:attribute>
-			<xs:attribute name="height" use="required">
-				<xs:simpleType>
-					<xs:restriction base="xs:integer">
-						<xs:minInclusive value="100" />
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:attribute>

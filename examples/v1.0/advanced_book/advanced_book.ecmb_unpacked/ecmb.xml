@@ -1,4 +1,5 @@
-<book version="1.0" type="manga" language="en" uid="bestmangapublisherinc_98a2cd52fea1168d" width="900" height="1200">
+<?xml version='1.0' encoding='utf-8'?>
+<ecmb version="1.0" type="manga" language="en" uid="bestmangapublisherinc_98a2cd52fea1168d">
   <metadata>
     <isbn>0123456789</isbn>
     <publisher href="https://www.bestmangapublisher-inc.com">BestMangaPublisher Inc.</publisher>
@@ -55,4 +56,4 @@
       <chapter label="Chapter 2.1" title="Downhill" dir="/9" href="/a.jpg"/>
     </chapter>
   </navigation>
-</book>
+</ecmb>

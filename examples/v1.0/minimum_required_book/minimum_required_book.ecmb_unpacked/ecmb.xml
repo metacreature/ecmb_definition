@@ -1,8 +1,9 @@
-<book version="1.0" type="manga" language="en" uid="bestmangapublisherinc_98a2cd52fea1168d" width="900" height="1200">
+<?xml version='1.0' encoding='utf-8'?>
+<ecmb version="1.0" type="manga" language="en" uid="bestmangapublisherinc_98a2cd52fea1168d">
   <metadata>
     <title>The Big Trip</title>
   </metadata>
   <content>
     <img src="1.jpg"/>
   </content>
-</book>
+</ecmb>

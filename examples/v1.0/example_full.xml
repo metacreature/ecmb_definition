@@ -69,7 +69,6 @@
 	</content>
 	<navigation>
 		<headline label="Highlights" title="Highlights">
-			<item label="Intro" href="/content/aaaa.jpg" title="Intro" />
 			<item label="Intro" href="/content/aaaa.jpg#auto" title="Intro" />
 			<item label="Intro" href="/content/aaaa.jpg#left" />
 			<item label="Intro" href="/content/aaaa.jpg#right" title="Intro" />

@@ -125,7 +125,6 @@ class ecmbValidator():
                     self._xml_files_list.append((src, False))
                 case 'dimg':
                     src = path + '/' + node.get('src')
-                    self._xml_content.append(src)
                     self._xml_content.append(src + '#auto')
                     self._xml_content.append(src + '#left')
                     self._xml_content.append(src + '#right')

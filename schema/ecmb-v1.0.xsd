@@ -31,6 +31,20 @@
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:attribute>
+			<xs:attribute name="width" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:minInclusive value="100" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="height" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:minInclusive value="100" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
 			<xs:attribute name="uid" use="required">
 				<xs:simpleType>
 					<xs:restriction base="xs:string">

@@ -10,6 +10,9 @@ class ecmbValidator():
     _error_callback = None
     _is_valid = None
 
+    _xml_image_width = None
+    _xml_image_height = None
+
     _xml_navigation = None
     _xml_content = None
     _xml_files_list = None
@@ -22,6 +25,14 @@ class ecmbValidator():
         
 
     def validate(self, file_name: str) -> bool:
+        return self._validate(file_name, False)
+    
+
+    def validate_fast(self, file_name: str) -> bool:
+        return self._validate(file_name, True)
+    
+
+    def _validate(self, file_name: str, fast: bool) -> bool:
         self._is_valid = True
 
         if not os.path.isfile(file_name):
@@ -32,14 +43,14 @@ class ecmbValidator():
                     xml_content = f.read()
                 self._validate_xml(xml_content)
             elif re.search(r'\.ecmb$', file_name, re.IGNORECASE):
-                self._validate_ecmb(file_name)
+                self._validate_ecmb(file_name, fast)
             else:
                 self._write_error('Unknown file-type!')
         
         return self._is_valid
         
 
-    def _validate_ecmb(self, file_name: str) -> bool:
+    def _validate_ecmb(self, file_name: str, fast: bool) -> bool:
         if not zipfile.is_zipfile(file_name):
             self._write_error('Invalid eCMB-File!')
             return False
@@ -64,18 +75,43 @@ class ecmbValidator():
         
         for xml_file in self._xml_files_list:
             xml_file_name = xml_file[0][1:]
-            double = 2 if xml_file[1] else 1
+            double_allowed = True if xml_file[1] else False
 
             if not xml_file_name in zip_file_list:
                 self._write_error(f'"/{xml_file_name}" is missing!')
+            elif not fast:
+                image_size = self._get_image_size(ecmb_file, xml_file_name)
+                if not image_size:
+                    self._write_error(f'Faild to get image-size from "/{xml_file_name}"!')
+                
+                is_double = (image_size[0] / image_size[1]) > (self._xml_image_width / self._xml_image_height * 1.5)
+                
+                if double_allowed != is_double:
+                    self._write_error(f'Image has "/{xml_file_name}" wrong size!')
         
         return True
+
+
+    def _get_image_size(self, ecmb_file: zipfile.ZipFile, file_name: str) -> (int, int):
+        with ecmb_file.open(file_name, "r") as f:
+            parser = ImageFile.Parser()
+            chunk = f.read(2048)
+            count=2048
+            while chunk != "":
+                parser.feed(chunk)
+                if parser.image:
+                    return parser.image.size
+                chunk = f.read(2048)
+                count+=2048
             
 
     def _validate_xml(self, xml_content: str) -> bool:
         root = self._load_xml(xml_content)
         if root == None:
             return False
+        
+        self._xml_image_width = int(root.get('width'))
+        self._xml_image_height = int(root.get('height'))
         
         self._xml_navigation = []
         self._xml_content = []

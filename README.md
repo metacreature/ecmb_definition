@@ -21,7 +21,7 @@ It also contains a validator done in python for validating *.ecmb - files
 
 ## Definition:
 Its basically a Zip-file containing a XML-file named "ecmb.xml" for the meta-data and all the images stored in a folder "contents", organized in subfolders.
-# File-structure:
+### File-structure:
 ```
 myfile.ecmb
     ˪ ecmb.xml

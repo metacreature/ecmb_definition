@@ -87,7 +87,7 @@ class ecmbValidator():
                 is_double = (image_size[0] / image_size[1]) > (self._xml_image_width / self._xml_image_height * 1.5)
                 
                 if double_allowed != is_double:
-                    self._write_error(f'Image has "/{xml_file_name}" wrong size!')
+                    self._write_error(f'Image "/{xml_file_name}" has wrong size!')
         
         return True
 

@@ -8,7 +8,7 @@
 - validateable via XSD
 - published under [MIT License](https://choosealicense.com/licenses/mit/)
 
-## The project ([https://metacreature.github.io/](https://metacreature.github.io/))
+## The project ([https://metacreature.github.io/ecmb](https://metacreature.github.io/ecmb))
 **It contains:**
 - the [definition](https://github.com/metacreature/ecmb_definition) of the file-format and a file-validator
 - a [library](https://github.com/metacreature/ecmblib_python) for packing the eBooks
@@ -20,7 +20,7 @@
 
 
 ## About this repository:
-__This is the definition of the *.ecmb file-format!__
+This is the definition of the *.ecmb file-format!
 
 It also contains a validator done in python for validating *.ecmb - files
 

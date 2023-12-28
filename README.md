@@ -43,7 +43,7 @@ All rules and requirements for "ecmb.xml" are defined in the XSD ([located here 
 
 To clarify that more: a chapter links to a folder, that the reader-app can display which chapter you are currently reading. Of course you want to click on the chapter and the reader-app and therefore you have to provide a link to an image (href) which has to be part of the chapter. To enforce this the link to the image is relative to the chapter's folder. Btw. you can link to the 2nd image (or any you want as long its part of the chapter's folder), if eg. the first one is a spacer-image. Sub-chapters and items are also relative to its parent.
 
-I know its a bit complicated, but its a no-go to mix content with navigation and the programs which should build the eBook would have massive problems, if you want to place links to highlights before the content is added.
+I know its a bit complicated, but its a no-go to mix content with navigation and the programs which should build the eBook would have massive problems, if you want to place links before the content is added.
 Unfortunately I couldn't find a possibility tho validate that directly with XSD, but of course the validator will check this. If you have an idea, please post it here: [https://stackoverflow.com/questions/77667931/cross-validation-of-contents-in-an-xml-using-xsd](https://stackoverflow.com/questions/77667931/cross-validation-of-contents-in-an-xml-using-xsd)
 
 The **width and height** defined in the root-node **should** be the size of the images. It not exact, coz when I was building fan-translated Mangas, all images had a different size and aspect-ratio, **but** its enterly important to validate for the correct placement of double-page-images.

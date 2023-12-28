@@ -1,6 +1,7 @@
 # *.ecmb - The new Comic-Manga-eBook
 **Benefits:**
-- right to left reading in page-mode for mangas, while scroll-mode is still top-down
+- right to left reading in page-mode for Mangas, while scroll-mode is still top-down
+- of course left to right and top-down reading for (western) Comics
 - advanced support for double-pages
 - content-warnings for using safe-guard
 - a bunch of possible meta-data like genres and even the homepage of the publisher ([go to example >](https://github.com/metacreature/ecmb_definition/blob/master/examples/v1.0/example_full.xml))
@@ -12,7 +13,7 @@
 **It contains:**
 - the [definition](https://github.com/metacreature/ecmb_definition) of the file-format and a file-validator
 - a [library](https://github.com/metacreature/ecmblib_python) for packing the eBooks
-- a [builder](https://github.com/metacreature/ecmb_builder) for building the eBooks from your source-images
+- a simple-to-use [builder](https://github.com/metacreature/ecmb_builder) for building the eBooks from your source-images
 - a mobile-app for reading the eBooks is under developement
 - unfortunately there is no web-scraper to download source-images, coz I guess that would be illegal in my country to publish something like that. Maybe you'll find some here: [https://github.com/topics/manga-scraper](https://github.com/topics/manga-scraper)
 

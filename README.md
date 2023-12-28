@@ -10,10 +10,13 @@
 
 ## The project ([https://metacreature.github.io/](https://metacreature.github.io/))
 **It contains:**
-- [definition](https://github.com/metacreature/ecmb_definition) of the file-format and a file-validator
+- the [definition](https://github.com/metacreature/ecmb_definition) of the file-format and a file-validator
 - a [library](https://github.com/metacreature/ecmblib_python) for packing the eBooks
 - a [builder](https://github.com/metacreature/ecmb_builder) for building the eBooks from your source-images
 - a mobile-app for reading the eBooks is under developement
+
+**If you like it I would be happy if you donate on Coindrop:**
+
 
 ## About this repository:
 __This is the definition of the *.ecmb file-format!__
@@ -44,7 +47,7 @@ All rules and requirements for "ecmb.xml" are defined in the XSD ([located here 
 To clarify that more: a chapter links to a folder, that the reader-app can display which chapter you are currently reading. Of course you want to click on the chapter and the reader-app and therefore you have to provide a link to an image (href) which has to be part of the chapter. To enforce this the link to the image is relative to the chapter's folder. Btw. you can link to the 2nd image (or any you want as long its part of the chapter's folder), if eg. the first one is a spacer-image. Sub-chapters and items are also relative to its parent.
 
 I know its a bit complicated, but its a no-go to mix content with navigation and the programs which should build the eBook would have massive problems, if you want to place links before the content is added.
-Unfortunately I couldn't find a possibility tho validate that directly with XSD, but of course the validator will check this. If you have an idea, please post it here: [https://stackoverflow.com/questions/77667931/cross-validation-of-contents-in-an-xml-using-xsd](https://stackoverflow.com/questions/77667931/cross-validation-of-contents-in-an-xml-using-xsd)
+Unfortunately I couldn't find a possibility to validate that directly with XSD, but of course the validator will check this. If you have an idea, please post it here: [https://stackoverflow.com/questions/77667931/cross-validation-of-contents-in-an-xml-using-xsd](https://stackoverflow.com/questions/77667931/cross-validation-of-contents-in-an-xml-using-xsd)
 
 The **width and height** defined in the root-node **should** be the size of the images. It not exact, coz when I was building fan-translated Mangas, all images had a different size and aspect-ratio, **but** its enterly important for the validator to validate the correct placement of double-page-images.
 
@@ -57,4 +60,34 @@ If you link to a double-page-image in the navigation you have to address the src
 
 
 # Validator
+The validator of course validates the XML first. After that it manually checks if there are dead links in the navigation (If you have an idea doing this directly in XSD, please post it here: [https://stackoverflow.com/questions/77667931/cross-validation-of-contents-in-an-xml-using-xsd](https://stackoverflow.com/questions/77667931/cross-validation-of-contents-in-an-xml-using-xsd)).
+If you validate a *.ecmb (you can validate a single XML-file too) the validator then checks if all images linked in content are available. Finally it will check if all double-page-images are placed correctly.
+
+### For developers
+If you are doing your own library to create an *.ecmb in your prefered programming-language its highly recommended to validate it after the creation. My reader-app will validate it and won't display it if its invalid!
+
+## Using the Python-Validator
+### Installation
+- download and install Python3 [https://www.python.org/downloads/](https://www.python.org/downloads/)
+- download and install Git [https://git-scm.com/downloads](https://git-scm.com/downloads)
+- open the git-console and then
+    - clone this repositiory `git clone git@github.com:metacreature/ecmb_definition.git`
+    - go to the validator-folder `cd ecmb_definition/validator/python/`
+    - run `pip install -r requirements.txt`
+ 
+### Using it
+- open the git-console and then
+    - go to the validator-folder `cd ecmb_definition/validator/python/`
+    - run `invoke validate [absolute or relative path to your file]`
+
+Example:
+```
+$ cd ecmb_definition/validator/python/
+$ invoke validate ../../examples/v1.0/advanced_book/advanced_book.ecmb
+
+    File is valid!
+
+$
+```
+
 

@@ -14,7 +14,7 @@
 - a [library](https://github.com/metacreature/ecmblib_python) for packing the eBooks
 - a [builder](https://github.com/metacreature/ecmb_builder) for building the eBooks from your source-images
 - a mobile-app for reading the eBooks is under developement
-- unfortunately there is no web-scraper to download source-images, coz I guess that would be illegal in my country to publish something like that
+- unfortunately there is no web-scraper to download source-images, coz I guess that would be illegal in my country to publish something like that. Maybe you'll find some here: [https://github.com/topics/manga-scraper](https://github.com/topics/manga-scraper)
 
 **If you like it I would be happy if you  [donate on checkya](https://checkya.com/1hhp2cpit9eha/payme)**
 

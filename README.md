@@ -21,9 +21,9 @@
 
 
 ## About this repository:
-This is the definition of the *.ecmb file-format!
+This is the definition of the *.ecmb file-format! It also contains a validator done in python for validating *.ecmb - files
 
-It also contains a validator done in python for validating *.ecmb - files
+Published under [MIT License](https://choosealicense.com/licenses/mit/)
 
 # Definition:
 *.ecmb is basically a Zip-file containing a XML-file named "ecmb.xml" for the meta-data and all the images stored in a folder "content", organized in subfolders for using chapters. The cover-images are stored in the root of the Zip-file.

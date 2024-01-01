@@ -49,13 +49,7 @@
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:attribute>
-			<xs:attribute name="language" use="required">
-				<xs:simpleType>
-					<xs:restriction base="xs:string">
-						<xs:pattern value="[a-z]{2}" />
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:attribute>
+			<xs:attribute name="language" type="language" use="required" />
 			<xs:attribute name="width" use="required">
 				<xs:simpleType>
 					<xs:restriction base="xs:integer">
@@ -90,9 +84,12 @@
 			<xs:element name="volume" type="volume" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="description" type="notemptystring" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="authors" type="authors" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="editors" type="editors" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="genres" type="genres" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="warnings" type="warnings" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="original" type="original" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="basedon" type="basedon" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="notes" type="notemptystring" minOccurs="0" maxOccurs="1"/>
 		</xs:all>
 	</xs:complexType>
 
@@ -100,6 +97,13 @@
 	<xs:complexType name="authors">
 		<xs:sequence>
 			<xs:element name="author" type="author" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	
+	<xs:complexType name="editors">
+		<xs:sequence>
+			<xs:element name="editor" type="editor" minOccurs="1" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -118,9 +122,22 @@
 	</xs:complexType>
 
 
+	<xs:complexType name="original">
+		<xs:all>
+			<xs:element name="language" type="language" minOccurs="0" maxOccurs="1" />
+			<xs:element name="isbn" type="isbn" minOccurs="0" maxOccurs="1" />
+			<xs:element name="publisher" type="publisher" minOccurs="0" maxOccurs="1" />
+			<xs:element name="publishdate" type="publishdate" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="title" type="notemptystring" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="authors" type="authors" minOccurs="0" maxOccurs="1"/>
+		</xs:all>
+	</xs:complexType>
+
+
 	<xs:complexType name="basedon">
 		<xs:all>
 			<xs:element name="type" type="basedontype" minOccurs="0" maxOccurs="1" />
+			<xs:element name="language" type="language" minOccurs="0" maxOccurs="1" />
 			<xs:element name="isbn" type="isbn" minOccurs="0" maxOccurs="1" />
 			<xs:element name="publisher" type="publisher" minOccurs="0" maxOccurs="1" />
 			<xs:element name="publishdate" type="publishdate" minOccurs="0" maxOccurs="1"/>
@@ -226,6 +243,13 @@
 	</xs:simpleType>
 
 
+	<xs:simpleType name="language">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[a-z]{2}" />
+		</xs:restriction>
+	</xs:simpleType>
+
+
 	<xs:simpleType name="isbn">
 		<xs:restriction base="xs:string">
 			<xs:pattern value="([0-9]{10}|[0-9]{13})" />
@@ -266,7 +290,26 @@
 							<xs:enumeration value="Author"/>
 							<xs:enumeration value="Co-Author"/>
 							<xs:enumeration value="Story"/>
-							<xs:enumeration value="Illustrations"/>
+							<xs:enumeration value="Art"/>
+							<xs:enumeration value="Colorist" />
+							<xs:enumeration value="CoverArtist"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+
+	<xs:complexType name="editor">
+		<xs:simpleContent> 
+			<xs:extension base="notemptystring">
+				<xs:attribute name="href" type="web_href"/>
+				<xs:attribute name="type" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="Translator"/>
+							<xs:enumeration value="Scanner"/>
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:attribute>

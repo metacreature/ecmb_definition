@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<ecmb version="1.0" type="manga" language="en" uid="arghihahoihth6585868856865865horhju" width="900" height="1200">
+	<metadata>
+		<title>The Ultimate Manga Title</title>
+		<volume>8</volume>
+		<description>My Description</description>
+		<editors>
+			<editor type="Translator" href="https://www.clemens-k.org">Clemens K.</editor>
+			<editor type="Translator" href="https://www.nora-p.org">Nora P.</editor>
+			<editor type="Scanner" href="https://www.copycats.org">CopyCats</editor>
+		</editors>
+		<genres>
+			<genre>Comedy</genre>
+			<genre>Adventure</genre>
+		</genres>
+		<warnings>
+			<warning>Nudity</warning>
+		</warnings>
+		<original>
+			<language>jp</language>
+			<isbn>4321098765</isbn>
+			<publisher href="https://www.japanmangapublisher-inc.com">JapanMangaPublisher Inc.</publisher>
+			<publishdate>1990</publishdate>
+			<title>スケベサーヴァントになる話</title>
+			<authors>
+				<author type="Story" href="https://www.agatha-christie.org">Agatha Christie</author>
+				<author type="Art" href="https://www.walt-disney.org">Walt Disney</author>
+			</authors>
+		</original>
+	</metadata>
+	<content cover_front="cover_front.jpg" cover_rear="cover_rear.jpg">
+		<dir name="chapter_1">
+			<dimg src="page1.jpg" src_left="page1_left.jpg" src_right="page1_right.jpg" />
+			<img src="page3.jpg" />
+			<img src="page4.jpg" />
+			<img src="page5.jpg" />
+			<img src="page6.jpg" />
+			<img src="page7.jpg" />
+		</dir>
+		<dir name="chapter_2">
+			<img src="page1.jpg" />
+			<img src="page2.jpg" />
+			<img src="page3.jpg" />
+			<img src="page4.jpg" />
+			<img src="page5.jpg" />
+		</dir>
+	</content>
+	<navigation>
+		<chapter label="Chapter 1" title="The Big Battle" dir="/content/chapter_1" href="/page1.jpg#left" />
+		<chapter label="Chapter 2" title="Preperation" dir="/content/chapter_2" href="/page2.jpg" />
+	</navigation>
+</ecmb>

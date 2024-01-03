@@ -6,20 +6,20 @@
 		<publishdate>2015-03-23</publishdate>
 		<title>The Ultimate Manga Title</title>
 		<volume>8</volume>
-		<description>My Description</description>
+		<summary>My Description</summary>
 		<authors>
-			<author type="Author" href="https://www.agatha-christie.org">Agatha Christie</author>
-			<author type="Co-Author" href="https://www.arthur-doyle.org">Arthur Conan Doyle</author>
-			<author type="Co-Author" href="https://www.mary-shelley.org">Mary Shelley</author>
-			<author type="Story" href="https://www.agatha-christie.org">Agatha Christie</author>
-			<author type="Art" href="https://www.walt-disney.org">Walt Disney</author>
-			<author type="Colorist" href="https://www.walt-disney.org">Walt Disney</author>
-			<author type="CoverArtist" href="https://www.walt-disney.org">Walt Disney</author>
+			<author role="Author" href="https://www.agatha-christie.org">Agatha Christie</author>
+			<author role="Co-Author" href="https://www.arthur-doyle.org">Arthur Conan Doyle</author>
+			<author role="Co-Author" href="https://www.mary-shelley.org">Mary Shelley</author>
+			<author role="Story" href="https://www.agatha-christie.org">Agatha Christie</author>
+			<author role="Art" href="https://www.walt-disney.org">Walt Disney</author>
+			<author role="Colorist" href="https://www.walt-disney.org">Walt Disney</author>
+			<author role="CoverArtist" href="https://www.walt-disney.org">Walt Disney</author>
 		</authors>
 		<editors>
-			<editor type="Translator" href="https://www.clemens-k.org">Clemens K.</editor>
-			<editor type="Translator" href="https://www.nora-p.org">Nora P.</editor>
-			<editor type="Scanner" href="https://www.copycats.org">CopyCats</editor>
+			<editor role="Translator" href="https://www.clemens-k.org">Clemens K.</editor>
+			<editor role="Translator" href="https://www.nora-p.org">Nora P.</editor>
+			<editor role="Scanner" href="https://www.copycats.org">CopyCats</editor>
 		</editors>
 		<genres>
 			<genre>Comedy</genre>
@@ -51,13 +51,13 @@
 			<publishdate>1990</publishdate>
 			<title>スケベサーヴァントになる話</title>
 			<authors>
-				<author type="Author" href="https://www.agatha-christie.org">Agatha Christie</author>
-				<author type="Co-Author" href="https://www.arthur-doyle.org">Arthur Conan Doyle</author>
-				<author type="Co-Author" href="https://www.mary-shelley.org">Mary Shelley</author>
-				<author type="Story" href="https://www.agatha-christie.org">Agatha Christie</author>
-				<author type="Art" href="https://www.walt-disney.org">Walt Disney</author>
-				<author type="Colorist" href="https://www.walt-disney.org">Walt Disney</author>
-				<author type="CoverArtist" href="https://www.walt-disney.org">Walt Disney</author>
+				<author role="Author" href="https://www.agatha-christie.org">Agatha Christie</author>
+				<author role="Co-Author" href="https://www.arthur-doyle.org">Arthur Conan Doyle</author>
+				<author role="Co-Author" href="https://www.mary-shelley.org">Mary Shelley</author>
+				<author role="Story" href="https://www.agatha-christie.org">Agatha Christie</author>
+				<author role="Art" href="https://www.walt-disney.org">Walt Disney</author>
+				<author role="Colorist" href="https://www.walt-disney.org">Walt Disney</author>
+				<author role="CoverArtist" href="https://www.walt-disney.org">Walt Disney</author>
 			</authors>
 		</original>
 		<basedon>
@@ -68,13 +68,13 @@
 			<publishdate>1986</publishdate>
 			<title>The Ultimat Novel Title</title>
 			<authors>
-				<author type="Author" href="https://www.agatha-christie.org">Agatha Christie</author>
-				<author type="Co-Author" href="https://www.arthur-doyle.org">Arthur Conan Doyle</author>
-				<author type="Co-Author" href="https://www.mary-shelley.org">Mary Shelley</author>
-				<author type="Story" href="https://www.agatha-christie.org">Agatha Christie</author>
-				<author type="Art" href="https://www.walt-disney.org">Walt Disney</author>
-				<author type="Colorist" href="https://www.walt-disney.org">Walt Disney</author>
-				<author type="CoverArtist" href="https://www.walt-disney.org">Walt Disney</author>
+				<author role="Author" href="https://www.agatha-christie.org">Agatha Christie</author>
+				<author role="Co-Author" href="https://www.arthur-doyle.org">Arthur Conan Doyle</author>
+				<author role="Co-Author" href="https://www.mary-shelley.org">Mary Shelley</author>
+				<author role="Story" href="https://www.agatha-christie.org">Agatha Christie</author>
+				<author role="Art" href="https://www.walt-disney.org">Walt Disney</author>
+				<author role="Colorist" href="https://www.walt-disney.org">Walt Disney</author>
+				<author role="CoverArtist" href="https://www.walt-disney.org">Walt Disney</author>
 			</authors>
 		</basedon>
 		<notes>My first build</notes>
@@ -96,16 +96,16 @@
 	</content>
 	<navigation>
 		<headline label="Highlights" title="Highlights">
-			<item label="Intro" href="/content/aaaa.jpg#auto" title="Intro" />
-			<item label="Intro" href="/content/aaaa.jpg#left" />
-			<item label="Intro" href="/content/aaaa.jpg#right" title="Intro" />
-			<item label="Start reading" href="/content/chapter_1/subchapter_1/subchapter_2/bbbbb.jpg" />
+			<link label="Intro" href="/content/aaaa.jpg#auto" title="Intro" />
+			<link label="Intro" href="/content/aaaa.jpg#left" />
+			<link label="Intro" href="/content/aaaa.jpg#right" title="Intro" />
+			<link label="Start reading" href="/content/chapter_1/subchapter_1/subchapter_2/bbbbb.jpg" />
 		</headline>
 		<chapter label="Chapter 1" title="The Big Battle" dir="/content/chapter_1" href="/subchapter_1/subchapter_2/bbbbb.jpg">
 			<chapter label="Chapter 1.1" title="Preperation" dir="/subchapter_1" href="/subchapter_2/bbbbb.jpg">
-				<item label="Story" href="/ccccc.jpg" />
+				<link label="Story" href="/ccccc.jpg" />
 				<headline label="Highlights" title="Highlights">
-					<item label="Start reading" href="/subchapter_2/bbbbb.jpg" />
+					<link label="Start reading" href="/subchapter_2/bbbbb.jpg" />
 				</headline>
 			</chapter>
 		</chapter>

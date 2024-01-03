@@ -3,11 +3,11 @@
 	<metadata>
 		<title>The Ultimate Manga Title</title>
 		<volume>8</volume>
-		<description>My Description</description>
+		<summary>My Description</summary>
 		<editors>
-			<editor type="Translator" href="https://www.clemens-k.org">Clemens K.</editor>
-			<editor type="Translator" href="https://www.nora-p.org">Nora P.</editor>
-			<editor type="Scanner" href="https://www.copycats.org">CopyCats</editor>
+			<editor role="Translator" href="https://www.clemens-k.org">Clemens K.</editor>
+			<editor role="Translator" href="https://www.nora-p.org">Nora P.</editor>
+			<editor role="Scanner" href="https://www.copycats.org">CopyCats</editor>
 		</editors>
 		<genres>
 			<genre>Comedy</genre>
@@ -23,8 +23,8 @@
 			<publishdate>1990</publishdate>
 			<title>スケベサーヴァントになる話</title>
 			<authors>
-				<author type="Story" href="https://www.agatha-christie.org">Agatha Christie</author>
-				<author type="Art" href="https://www.walt-disney.org">Walt Disney</author>
+				<author role="Story" href="https://www.agatha-christie.org">Agatha Christie</author>
+				<author role="Art" href="https://www.walt-disney.org">Walt Disney</author>
 			</authors>
 		</original>
 	</metadata>

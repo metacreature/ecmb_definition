@@ -168,7 +168,7 @@ class ecmbValidator():
             match node.tag:
                 case 'headline':
                     self._read_xml_navigation(node, path)
-                case 'item':
+                case 'link':
                     self._xml_navigation.append(path + node.get('href'))
                 case 'chapter':
                     dir = node.get('dir')

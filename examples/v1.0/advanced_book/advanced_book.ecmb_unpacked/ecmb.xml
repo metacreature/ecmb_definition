@@ -6,10 +6,10 @@
     <publishdate>2023-01-18</publishdate>
     <title>The Big Trip</title>
     <volume>1</volume>
-    <description>A stick figure goes on a big thrilling hiking-trip.</description>
+    <summary>A stick figure goes on a big thrilling hiking-trip.</summary>
     <authors>
-      <author type="Story" href="https://github.com/metacreature">Clemens K.</author>
-      <author type="Art" href="https://github.com/metacreature">Clemens K.</author>
+      <author role="Story" href="https://github.com/metacreature">Clemens K.</author>
+      <author role="Art" href="https://github.com/metacreature">Clemens K.</author>
     </authors>
     <genres>
       <genre>Adventure</genre>
@@ -25,7 +25,7 @@
       <publishdate>1986</publishdate>
       <title>The Scary Hiking</title>
       <authors>
-        <author type="Author" href="https://www.agatha-christie.net">Agatha Christie</author>
+        <author role="Author" href="https://www.agatha-christie.net">Agatha Christie</author>
       </authors>
     </basedon>
   </metadata>
@@ -47,12 +47,12 @@
   </content>
   <navigation>
     <headline label="Highlights">
-      <item label="The Girl" href="/content/3/6.jpg"/>
-      <item label="The Summit" href="/content/3/8.jpg#left"/>
+      <link label="The Girl" href="/content/3/6.jpg"/>
+      <link label="The Summit" href="/content/3/8.jpg#left"/>
     </headline>
     <chapter label="Chapter 1" title="The Bus-Trip" dir="/content/1" href="/2.jpg"/>
     <chapter label="Chapter 2" title="The Hiking-Trip" dir="/content/3" href="/4.jpg">
-      <item label="The Summit" href="/8.jpg#left"/>
+      <link label="The Summit" href="/8.jpg#left"/>
       <chapter label="Chapter 2.1" title="Downhill" dir="/9" href="/a.jpg"/>
     </chapter>
   </navigation>

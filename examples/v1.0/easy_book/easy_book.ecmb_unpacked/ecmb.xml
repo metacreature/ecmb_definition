@@ -3,9 +3,9 @@
   <metadata>
     <title>The Big Trip</title>
     <volume>1</volume>
-    <description>A stick figure goes on a big thrilling hiking-trip.</description>
+    <summary>A stick figure goes on a big thrilling hiking-trip.</summary>
     <authors>
-      <author type="Author">Clemens K.</author>
+      <author role="Author">Clemens K.</author>
     </authors>
     <genres>
       <genre>Adventure</genre>

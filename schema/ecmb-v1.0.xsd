@@ -82,14 +82,14 @@
 			<xs:element name="publishdate" type="publishdate" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="title" type="notemptystring" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="volume" type="volume" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="description" type="notemptystring" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="summary" type="notemptystring" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="notes" type="notemptystring" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="authors" type="authors" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="editors" type="editors" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="genres" type="genres" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="warnings" type="warnings" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="original" type="original" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="basedon" type="basedon" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="notes" type="notemptystring" minOccurs="0" maxOccurs="1"/>
 		</xs:all>
 	</xs:complexType>
 
@@ -193,7 +193,7 @@
 	<xs:complexType name="navigation">
 		<xs:sequence>
 			<xs:choice minOccurs="1" maxOccurs="unbounded">
-				<xs:element name="item" type="item" />
+				<xs:element name="link" type="link" />
 				<xs:element name="chapter" type="chapter" />
 				<xs:element name="headline" type="headline" />
 			</xs:choice>
@@ -201,7 +201,7 @@
 	</xs:complexType>
 	
 	
-	<xs:complexType name ="item">
+	<xs:complexType name ="link">
 		<xs:attribute name="label" type="notemptystring" use="required" />
 		<xs:attribute name="title" type="notemptystring" />
 		<xs:attribute name="href" type="navigation_href" use="required" />
@@ -211,7 +211,7 @@
 	<xs:complexType name="chapter">
 		<xs:sequence>
 			<xs:choice minOccurs="0" maxOccurs="unbounded">
-				<xs:element name="item" type="item" />
+				<xs:element name="link" type="link" />
 				<xs:element name="chapter" type="chapter" />
 				<xs:element name="headline" type="headline" />
 			</xs:choice>
@@ -226,7 +226,7 @@
 	<xs:complexType name="headline">
 		<xs:sequence>
 			<xs:choice minOccurs="1" maxOccurs="unbounded">
-				<xs:element name="item" type="item" />
+				<xs:element name="link" type="link" />
 				<xs:element name="chapter" type="chapter" />
 				<xs:element name="headline" type="headline" />
 			</xs:choice>
@@ -284,7 +284,7 @@
 		<xs:simpleContent> 
 			<xs:extension base="notemptystring">
 				<xs:attribute name="href" type="web_href"/>
-				<xs:attribute name="type" use="required">
+				<xs:attribute name="role" use="required">
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
 							<xs:enumeration value="Author"/>
@@ -305,7 +305,7 @@
 		<xs:simpleContent> 
 			<xs:extension base="notemptystring">
 				<xs:attribute name="href" type="web_href"/>
-				<xs:attribute name="type" use="required">
+				<xs:attribute name="role" use="required">
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
 							<xs:enumeration value="Translator"/>
